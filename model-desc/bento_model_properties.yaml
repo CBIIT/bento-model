@@ -161,14 +161,14 @@ PropDefinitions:
     Private: false
 #property of program, project, study
   release_requested:
-    Desc: User requests that the GDC release the study. Release can only be requested if the study is releasable.
+    Desc: User requests that the data commons release the study. Release can only be requested if the study is releasable.
     Src: None
     Type: boolean
     Req: false
     Private: false
 #property of program, project, study
   released:
-    Desc: To release a study is to tell the GDC to include all submitted entities in the next GDC index.
+    Desc: To release a study is to tell the data commons to include all submitted entities in the next data commons index.
     Src: None
     Type: boolean
     Req: false
@@ -182,7 +182,7 @@ PropDefinitions:
     Private: false
 #property of program, project, study
   request_submission:
-    Desc: Indicates that the user has requested submission to the GDC for harmonization.
+    Desc: Indicates that the user has requested submission to the data commons for harmonization.
     Src: None
     Type: boolean
     Req: false
@@ -542,44 +542,9 @@ PropDefinitions:
     Private: false
 #property of study_subject
   taxon:
-    Desc: A taxonomic group, such as a species.
+    Desc: A taxonomic group, such as a species that study_subject belongs to.
     Src: None
-    Type:
-      - Trichomonas vaginalis
-      - Bemisia tabaci (Gennadius)
-      - Mus musculus
-      - Escherichia coli
-      - Rattus norvegicus
-      - Mycoplasma pneumoniae
-      - Takifugu rubripes
-      - Pneumocystis carinii
-      - Canis familiaris
-      - Arabidopsis thaliana
-      - Dictyostelium discoideum
-      - Oryza sativa
-      - Plasmodium falciparum
-      - Anopheles gambiae
-      - Chlamydomonas reinhardtii
-      - Caenorhabditis remanei
-      - Schizosaccharomyces pombe
-      - Pseudomonas aeruginosa
-      - Staphylococcus aureus
-      - Gallus gallus
-      - Zea mays
-      - Caenorhabditis briggsae
-      - Haliotis rufescens
-      - Xenopus laevis
-      - Homo sapiens
-      - Mucata mulata
-      - Unspecified
-      - Bos taurus
-      - Caenorhabditis elegans
-      - Danio rerio (zebrafish)
-      - Hepatitis C virus
-      - Saccharomyces cerevisiae
-      - Drosophila melanogaster
-      - Sus scrofa
-      - Gasterosteus aculeatus (fish)
+    Type: string
     Req: true
     Private: false
 #property of study_subject, sample, aliquot
@@ -1661,14 +1626,14 @@ PropDefinitions:
     Private: false
 #property of aliquot
   no_matched_normal_wgs:
-    Desc: There will be no matched normal WGS aliquots for this case that can be used for variant calling purposes. The GDC may elect to use a single tumor calling pipeline to process this data.
+    Desc: There will be no matched normal WGS aliquots for this case that can be used for variant calling purposes.
     Src: None
     Type: boolean
     Req: false
     Private: false
 #property of aliquot
   no_matched_normal_wxs:
-    Desc: There will be no matched normal WXS aliquots for this case that can be used for variant calling purposes. The GDC may elect to use a single tumor calling pipeline to process this data.
+    Desc: There will be no matched normal WXS aliquots for this case that can be used for variant calling purposes.
     Src: None
     Type: boolean
     Req: false
