@@ -266,7 +266,7 @@ PropDefinitions:
     Private: false
 #property of project, study
   acquisition_type:
-    Desc: The modes of acquisition used in study: data dependent acquisition (DDA), data independent acquisition (DIA). Relevant for proteomic studies.
+    Desc: The modes of acquisition used in study- data dependent acquisition (DDA), data independent acquisition (DIA). Relevant for proteomic studies.
     Src: None
     Type: string
     Req: false
@@ -1668,28 +1668,28 @@ PropDefinitions:
     Private: false
 #property of laboratory_procedure
   laboratory_procedure_type:
-    Desc: A short description of the laboratory procedure. Example: Whole Genome Sequencing, RT-PCR, Flow Cytometry, Immunohistochemistry Assay, Microscopy.
+    Desc: A short description of the laboratory procedure. Example- Whole Genome Sequencing, RT-PCR, Flow Cytometry, Immunohistochemistry Assay, Microscopy.
     Src: None
     Type: string
     Req: true
     Private: false
 #property of laboratory_procedure
   laboratory_procedure_target_type:
-    Desc: The specific biological material that is processed by the laboratory procedure. Examples: RNA, DNA, peptide, protein, T cell, Macrophage.
+    Desc: The specific biological material that is processed by the laboratory procedure. Examples- RNA, DNA, peptide, protein, T cell, Macrophage.
     Src: None
     Type: string
     Req: true
     Private: false
 #property of laboratory_procedure
   instrument_name:
-    Desc: The name of the instrument used for the laboratory procedure. Example: Next Generation Sequencer, Flow Cytometer, Mass Spectrophotometer
+    Desc: The name of the instrument used for the laboratory procedure. Example- Next Generation Sequencer, Flow Cytometer, Mass Spectrophotometer
     Src: None
     Type: string
     Req: false
     Private: false
 #property of laboratory_procedure
   instrument_model:
-    Desc: The make of the instrument used for the laboratory procedure. Example: Illumina.
+    Desc: The make of the instrument used for the laboratory procedure. Example- Illumina.
     Src: None
     Type: string
     Req: false
@@ -1703,7 +1703,7 @@ PropDefinitions:
     Private: false
 #property of laboratory_procedure
   software_name:
-    Desc: The name of any software application used in the laboratory procedure. Example: NextSeq Control Software version 4.0
+    Desc: The name of any software application used in the laboratory procedure. Example- NextSeq Control Software version 4.0
     Src: None
     Type: string
     Req: false
@@ -1717,7 +1717,7 @@ PropDefinitions:
     Private: false
 #property of laboratory_procedure
   reagent_description:
-    Desc: Name of a key reagent used in laboratory procedure. Example: MiSeq Reagent Kit V2.
+    Desc: Name of a key reagent used in laboratory procedure. Example- MiSeq Reagent Kit V2.
     Src: None
     Type: string
     Req: false
@@ -1738,7 +1738,7 @@ PropDefinitions:
     Private: false
 #property of report
   report_type:
-    Desc: Indicator as to the nature of the report in terms of its content.Examples: Pathology Report, Bioanlaytical Report, Variant Report, Test Result Report, Clinical Report
+    Desc: Indicator as to the nature of the report in terms of its content.Examples- Pathology Report, Bioanlaytical Report, Variant Report, Test Result Report, Clinical Report
     Src: None
     Type: string
     Req: true
@@ -2079,7 +2079,7 @@ PropDefinitions:
     Private: false
 #property of demographic_data
   gender:
-    Desc: Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]
+    Desc: Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1- Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]
     Src: None
     Type:
       - female
@@ -7529,7 +7529,7 @@ PropDefinitions:
     Private: false
 #property of diagnosis
   weiss_assessment_score:
-    Desc: The text term used to describe the overall Weiss assessment score, a commonly used assessment describing the malignancy of adrenocortical tumors. The Weiss score is determined based on nine histological criteria including the following: high nuclear grade, mitotic rate greater than five per 50 high power fields (HPF), atypical mitotic figures, eosinophilic tumor cell cytoplasm (greater than 75% tumor cells), diffuse architecture (greater than 33% of tumor), necrosis, venous invasion, sinusoidal invasion, and capsular invasion.
+    Desc: The text term used to describe the overall Weiss assessment score, a commonly used assessment describing the malignancy of adrenocortical tumors. The Weiss score is determined based on nine histological criteria including the following- high nuclear grade, mitotic rate greater than five per 50 high power fields (HPF), atypical mitotic figures, eosinophilic tumor cell cytoplasm (greater than 75% tumor cells), diffuse architecture (greater than 33% of tumor), necrosis, venous invasion, sinusoidal invasion, and capsular invasion.
     Src: None
     Type:
       - 0
