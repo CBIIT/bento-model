@@ -1,6 +1,7 @@
 Nodes:
   institution:
     Props:
+      - institution_id
       - institution_name
       - institution_url
   program:
@@ -60,8 +61,8 @@ Nodes:
       - analytical_fraction
   cross_reference_database:
     Props:
-      - cross_reference_database_name
       - cross_reference_database_id
+      - cross_reference_database_name
       - cross_reference_database_url
   study:
     Props:
@@ -192,6 +193,7 @@ Nodes:
       - selected_normal_wxs
   laboratory_procedure:
     Props:
+      - laboratory_procedure_id
       - laboratory_procedure_type
       - laboratory_procedure_target_type
       - instrument_name
@@ -223,6 +225,7 @@ Nodes:
       - md5sum
   demographic_data:
     Props:
+      - demographic_data_id
       - age_at_index
       - age_is_obfuscated
       - breed
@@ -245,6 +248,7 @@ Nodes:
       - year_of_death
   exposure:
     Props:
+      - exposure_node_id
       - alcohol_days_per_week
       - alcohol_drinks_per_day
       - alcohol_history
@@ -267,6 +271,7 @@ Nodes:
       - years_smoked
   family_medical_history:
     Props:
+      - family_history_id
       - relationship_age_at_diagnosis
       - relationship_gender
       - relationship_primary_diagnosis
@@ -275,6 +280,7 @@ Nodes:
       - relatives_with_cancer_history_count
   therapeutic_procedure:
     Props:
+      - therapeutic_procedure_id
       - days_to_treatment_end
       - days_to_treatment_start
       - initial_disease_status
@@ -288,6 +294,7 @@ Nodes:
       - treatment_type
   diagnosis:
     Props:
+      - diagnosis_id
       - age_at_diagnosis
       - ajcc_clinical_m
       - ajcc_clinical_n
@@ -326,11 +333,8 @@ Nodes:
       - days_to_diagnosis
       - days_to_hiv_diagnosis
       - days_to_last_follow_up
-      - days_to_last_follow_up
-      - days_to_last_known_disease_status
       - days_to_last_known_disease_status
       - days_to_new_event
-      - days_to_recurrence
       - days_to_recurrence
       - enneking_msts_grade
       - enneking_msts_metastasis
@@ -360,7 +364,6 @@ Nodes:
       - ishak_fibrosis_score
       - iss_stage
       - largest_extrapelvic_peritoneal_focus
-      - last_known_disease_status
       - last_known_disease_status
       - laterality
       - ldh_level_at_diagnosis
@@ -417,6 +420,7 @@ Nodes:
       - year_of_diagnosis
   follow_up:
     Props:
+      - follow_up_id
       - adverse_event
       - barretts_esophagus_goblet_cells_present
       - bmi
