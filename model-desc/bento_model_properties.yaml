@@ -1485,9 +1485,9 @@ PropDefinitions:
     Type: string
     Req: false
     Private: false
-#property of analyte, aliquot
-  aliquot_id:
-    Desc: A unique id assigned by the data commons to the analyte derived from a sample, fraction or analyte.
+#property of analyte
+  analyte_id:
+    Desc: A unique id assigned by the data commons to the analyte derived from the sample.
     Src: None
     Type: string
     Req: true
@@ -1579,6 +1579,13 @@ PropDefinitions:
       - "Unknown"
       - "Not Reported"
     Req: false
+    Private: false
+#property of aliquot
+  aliquot_id:
+    Desc: A unique id assigned by the data commons to the analyte derived from a sample, fraction or analyte.
+    Src: None
+    Type: string
+    Req: true
     Private: false
 #property of aliquot
   aliquot_is_ref:

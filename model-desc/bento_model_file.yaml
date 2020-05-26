@@ -163,7 +163,7 @@ Nodes:
       - fraction_type
   analyte:
     Props:
-      - aliquot_id
+      - analyte_id
       - analyte_type_id
       - analyte_type
       - analyte_quantity
