@@ -479,6 +479,8 @@ Relationships:
         Dst: program
       - Src: study_subject
         Dst: program
+      - Src: laboratory_procedure
+        Dst: program
       - Src: file
         Dst: program
     Props: null
@@ -531,8 +533,6 @@ Relationships:
         Dst: sample
       - Src: analyte
         Dst: sample
-      - Src: laboratory_procedure
-        Dst: sample
       - Src: report
         Dst: sample
       - Src: file
@@ -543,8 +543,6 @@ Relationships:
     Ends:
       - Src: analyte
         Dst: fraction
-      - Src: laboratory_procedure
-        Dst: fraction
       - Src: report
         Dst: fraction
     Props: null
@@ -553,16 +551,24 @@ Relationships:
     Ends:
       - Src: aliquot
         Dst: analyte
-      - Src: laboratory_procedure
-        Dst: analyte
       - Src: report
         Dst: analyte
+    Props: null
+  processed_by:
+    Mul: many_to_many
+    Ends:
+      - Src: aliquot
+        Dst: laboratory_procedure
+      - Src: analyte
+        Dst: laboratory_procedure
+      - Src: fraction
+        Dst: laboratory_procedure
+      - Src: sample
+        Dst: laboratory_procedure
     Props: null
   of_aliquot:
     Mul: one_to_one
     Ends:
-      - Src: laboratory_procedure
-        Dst: aliquot
       - Src: report
         Dst: aliquot
     Props: null
