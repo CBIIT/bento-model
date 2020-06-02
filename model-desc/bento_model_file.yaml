@@ -4,6 +4,7 @@ Nodes:
       - institution_id
       - institution_name
       - institution_url
+      - institution_acronymn
   program:
     Props:
       - program_id
@@ -16,15 +17,16 @@ Nodes:
       - start_date
       - end_date
       - embargo_date
-      - intended_release_date
       - index_date
       - dbgap_accession_number
       - sponsor
-      - program_manager
       - program_sort_order
       - state
       - in_review
       - is_legacy
+      - pubmed_id
+      - intended_release_date
+      - program_manager
       - release_requested
       - released
       - releasable
@@ -70,9 +72,9 @@ Nodes:
       - study_name
       - study_acronym
       - study_full_description
-      - study_external_url
       - study_short_description
       - study_type
+      - study_external_url
       - date_of_approval
       - start_date
       - end_date
@@ -97,27 +99,32 @@ Nodes:
     Props:
       - study_subject_id
       - study_subject_source_id
-      - study_subject_first_name
-      - study_subject_is_ref
       - consent_type
-      - days_to_consent
       - lost_to_followup
-      - days_to_lost_to_followup
       - status
       - disease_type
+      - disease_subtype
       - taxon
       - primary_site
+      - in_analysis
+      - case_report_form_submitted
+      - consent_withdrawn
+      - study_subject_first_name
+      - study_subject_is_ref
+      - days_to_consent
+      - days_to_lost_to_followup
       - index_date
       - pool
   sample:
     Props:
       - sample_id
-      - sample_type_id
       - tissue_type
       - sample_type
+      - composition
+      - method_of_sample_procurement
+      - sample_type_id
       - total_tissue_area
       - passage_count
-      - composition
       - sample_anatomic_site
       - sample_laterality
       - comment
@@ -133,7 +140,6 @@ Nodes:
       - growth_rate
       - analysis_area
       - preservation_method
-      - method_of_sample_procurement
       - tumor_descriptor
       - tumor_code
       - tumor_code_id
@@ -196,6 +202,7 @@ Nodes:
       - laboratory_procedure_id
       - laboratory_procedure_type
       - laboratory_procedure_target_type
+      - test_name
       - instrument_name
       - instrument_model
       - instrument_version
@@ -227,20 +234,22 @@ Nodes:
     Props:
       - demographic_data_id
       - age_at_index
+      - cause_of_death
+      - survival_time
+      - days_to_death
+      - ethnicity
+      - race
+      - vital_status
+      - menopause_status
+      - gender
       - age_is_obfuscated
       - breed
-      - cause_of_death
       - cause_of_death_source
       - date_of_birth
       - days_to_birth
-      - days_to_death
-      - ethnicity
-      - gender
       - neutered_indicator
       - occupation_duration_years
       - premature_at_birth
-      - race
-      - vital_status
       - weeks_gestation_at_birth
       - height
       - weight
@@ -283,6 +292,12 @@ Nodes:
       - therapeutic_procedure_id
       - days_to_treatment_end
       - days_to_treatment_start
+      - chemotherapy_regimen
+      - chemotherapy_regimen_group
+      - all_endocrine_therapy_stopped
+      - primary_surgical_procedure
+      - received_chemotherapy
+      - endocrine_therapy_type
       - initial_disease_status
       - regimen_or_line_of_therapy
       - therapeutic_agents
@@ -295,6 +310,13 @@ Nodes:
   diagnosis:
     Props:
       - diagnosis_id
+      - tumor_grade
+      - tumor_largest_dimension_diameter
+      - er_status
+      - nuclear_grade
+      - pr_status
+      - recurrence_score
+      - tumor_size_group
       - age_at_diagnosis
       - ajcc_clinical_m
       - ajcc_clinical_n
@@ -409,8 +431,6 @@ Nodes:
       - treatment_data
       - tumor_confined_to_organ_of_origin
       - tumor_focality
-      - tumor_grade
-      - tumor_largest_dimension_diameter
       - tumor_regression_grade
       - tumor_stage
       - vascular_invasion_present
@@ -421,6 +441,14 @@ Nodes:
   follow_up:
     Props:
       - follow_up_id
+      - days_to_progression
+      - days_to_recurrence
+      - dfs_event_indicator
+      - days_to_distant_recurrence
+      - distant_recurrence_indicator
+      - recurrence_free_indicator
+      - dfs_event_type
+      - first_recurrence_type
       - adverse_event
       - barretts_esophagus_goblet_cells_present
       - bmi
@@ -432,9 +460,7 @@ Nodes:
       - days_to_adverse_event
       - days_to_comorbidity
       - days_to_follow_up
-      - days_to_progression
       - days_to_progression_free
-      - days_to_recurrence
       - diabetes_treatment_type
       - disease_response
       - dlco_ref_predictive_percent
@@ -463,6 +489,15 @@ Nodes:
       - treatment_since_last_contact
       - viral_hepatitis_serologies
       - weight
+  stratification_factor:
+    Props:
+      - stratification_factor_id
+      - grouped_recurrence_score
+      - stratification_code
+      - menopausal_status_stratification
+      - planned_chemotherapy_stratification
+      - planned_radiotherapy_stratification
+      - tumor_size_stratification
 Relationships:
   of_institution:
     Mul: many_to_many

@@ -20,6 +20,13 @@ PropDefinitions:
     Type: string
     Req: false
     Private: false
+#property of institution
+  institution_acronymn:
+    Desc: Official acronymn of the institute as it should be displayed on the UI.
+    Src: None
+    Type: string
+    Req: false
+    Private: false
 #property of program
   program_id:
     Desc: A unique id assigned by the data commons to the program.
@@ -90,13 +97,6 @@ PropDefinitions:
     Type: datetime
     Req: false
     Private: false
-#property of program, project, study
-  intended_release_date:
-    Desc: Tracks a study's intended release date.
-    Src: None
-    Type: datetime
-    Req: false
-    Private: false
 #property of program, project, study, study_subject
   index_date:
     Desc: The text term used to describe the reference or anchor date used when for date obfuscation, where a single date is obscured by creating one or more date ranges in relation to this date.
@@ -120,13 +120,6 @@ PropDefinitions:
 #property of program
   sponsor:
     Desc: Funding agency.
-    Src: None
-    Type: string
-    Req: false
-    Private: false
-#property of program
-  program_manager:
-    Desc: Name of the program manager from the sponsoring agency.
     Src: None
     Type: string
     Req: false
@@ -164,6 +157,27 @@ PropDefinitions:
     Desc: Indicates whether a study will appear in the Legacy Archive.
     Src: None
     Type: boolean
+    Req: false
+    Private: false
+#property of program
+  pubmed_id:
+    Desc: PubMed ID of the primary publication associated with project.
+    Src: None
+    Type: string
+    Req: false
+    Private: false
+#property of program, project, study
+  intended_release_date:
+    Desc: Tracks a study's intended release date.
+    Src: None
+    Type: datetime
+    Req: false
+    Private: false
+#property of program
+  program_manager:
+    Desc: Name of the program manager from the sponsoring agency.
+    Src: None
+    Type: string
     Req: false
     Private: false
 #property of program, project, study
@@ -335,13 +349,6 @@ PropDefinitions:
     Req: true
     Private: false
 #property of study
-  study_external_url:
-    Desc: External url to which users should be directed to learn more about the study.
-    Src: None
-    Type: string
-    Req: false
-    Private: false
-#property of study
   study_short_description:
     Desc: Abbreviated (single sentence) version of the study description.
     Src: None
@@ -351,6 +358,13 @@ PropDefinitions:
 #property of study
   study_type:
     Desc: Arbitrary designation of the study to indicate its underlying nature, e.g. clinical trial, transcriptomics study, etc.
+    Src: None
+    Type: string
+    Req: false
+    Private: false
+#property of study
+  study_external_url:
+    Desc: External url to which users should be directed to learn more about the study.
     Src: None
     Type: string
     Req: false
@@ -384,31 +398,10 @@ PropDefinitions:
     Req: true
     Private: false
 #property of study_subject
-  study_subject_first_name:
-    Desc: Study subject's first name, in full.
-    Src: None
-    Type: string
-    Req: false
-    Private: false
-#property of study_subject
-  study_subject_is_ref:
-    Desc: A biospecimen entity which is used as a reference sample for determining relative protein abundances in labeling experiments.
-    Src: None
-    Type: string
-    Req: false
-    Private: false
-#property of study_subject
   consent_type:
     Desc: The text term used to describe the type of consent obtain from the subject for participation in the study.
     Src: None
     Type: string
-    Req: false
-    Private: false
-#property of study_subject
-  days_to_consent:
-    Desc: Number of days between the date used for index and the date the subject consent was obtained for participation in the study.
-    Src: None
-    Type: integer
     Req: false
     Private: false
 #property of study_subject
@@ -419,13 +412,6 @@ PropDefinitions:
       - "Yes"
       - "No"
       - "Unknown"
-    Req: false
-    Private: false
-#property of study_subject
-  days_to_lost_to_followup:
-    Desc: The number of days between the date used for index and to the date the study subject was lost to follow-up.
-    Src: caDSR
-    Type: integer
     Req: false
     Private: false
 #property of study_subject, aliquot
@@ -548,11 +534,81 @@ PropDefinitions:
     Req: false
     Private: false
 #property of study_subject
+  disease_subtype:
+    Desc: A more granular classification of disease type.
+    Src: None
+    Type:
+      - "Infiltrating Ductal Carcinoma"
+      - "Infiltrating Lobular Carcinoma"
+      - "Infiltrating Ductal & Lobular Carcinoma"
+      - "Medullary Carcinoma"
+      - "Mucinous (colloid) Carcinoma"
+      - "Comedocarcinoma"
+      - "Paget's Disease"
+      - "Papillary Carcinoma"
+      - "Tubular Carcinoma"
+      - "Adenocarcinoma"
+      - "Carcinoma, NOS"
+      - "Not Reported"
+    Req: false
+    Private: false
+#property of study_subject
   taxon:
     Desc: A taxonomic group, such as a species that study_subject belongs to.
     Src: None
     Type: string
     Req: true
+    Private: false
+#property of study_subject
+  in_analysis:
+    Desc: Indicator variable of whether the patient was in the primary
+analysis set for the publication
+    Src: None
+    Type: boolean
+    Req: false
+    Private: false
+#property of study_subject
+  case_report_form_submitted:
+    Desc: Indicator variable of whether the TAILORx On-Study case report form (baseline data) was
+submitted
+    Src: None
+    Type: boolean
+    Req: false
+    Private: false
+#property of study_subject
+  consent_withdrawn:
+    Desc: Indicator of whether patient withdrew consent for further follow-up
+    Src: None
+    Type: boolean
+    Req: false
+    Private: false
+#property of study_subject
+  study_subject_first_name:
+    Desc: Study subject's first name, in full.
+    Src: None
+    Type: string
+    Req: false
+    Private: false
+#property of study_subject
+  study_subject_is_ref:
+    Desc: A biospecimen entity which is used as a reference sample for determining relative protein abundances in labeling experiments.
+    Src: None
+    Type: string
+    Req: false
+    Private: false
+#property of study_subject
+  days_to_consent:
+    Desc: Number of days between the date used for index and the date the subject consent was obtained for participation in the study.
+    Src: None
+    Type: integer
+    Req: false
+    Private: false
+#property of study_subject
+  days_to_lost_to_followup:
+    Desc: The number of days between the date used for index and to the date the study subject was lost to follow-up.
+    Src: caDSR
+    Type: integer
+    Req: false
     Private: false
 #property of study_subject, sample, aliquot
   pool:
@@ -567,44 +623,6 @@ PropDefinitions:
     Src: None
     Type: string
     Req: true
-    Private: false
-#property of sample
-  sample_type_id:
-    Desc: The accompanying sample type id for the sample type.
-    Src: None
-    Type:
-      - "01"
-      - "02"
-      - "03"
-      - "04"
-      - "05"
-      - "06"
-      - "07"
-      - "08"
-      - "09"
-      - "10"
-      - "11"
-      - "12"
-      - "13"
-      - "14"
-      - "15"
-      - "16"
-      - "17"
-      - "18"
-      - "20"
-      - "30"
-      - "31"
-      - "32"
-      - "40"
-      - "41"
-      - "42"
-      - "50"
-      - "60"
-      - "61"
-      - "85"
-      - "86"
-      - "99"
-    Req: false
     Private: false
 #property of sample
   tissue_type:
@@ -678,20 +696,6 @@ PropDefinitions:
     Req: true
     Private: false
 #property of sample
-  total_tissue_area:
-    Desc: The total area of a tissue sample.
-    Src: None
-    Type: number
-    Req: false
-    Private: false
-#property of sample
-  passage_count:
-    Desc: Number of passages (splits) between the original tissue and this model.
-    Src: None
-    Type: integer
-    Req: false
-    Private: false
-#property of sample
   composition:
     Desc: Text term that represents the cellular composition of the sample.
     Src: None
@@ -729,6 +733,142 @@ PropDefinitions:
       - "Unknown"
       - "Not Reported"
       - "Not Allowed To Collect"
+    Req: false
+    Private: false
+#property of sample
+  method_of_sample_procurement:
+    Desc: The method used to procure the sample used to extract analyte(s).
+    Src: None
+    Type:
+      - "Abdomino-perineal Resection of Rectum"
+      - "Anterior Resection of Rectum"
+      - "Ascites Drainage"
+      - "Aspirate"
+      - "Autopsy"
+      - "Biopsy"
+      - "Blood Draw"
+      - "Bone Marrow Aspirate"
+      - "Core Biopsy"
+      - "Cystectomy"
+      - "Endo Rectal Tumor Resection"
+      - "Endoscopic Biopsy"
+      - "Endoscopic Mucosal Resection (EMR)"
+      - "Enucleation"
+      - "Excisional Biopsy"
+      - "Fine Needle Aspiration"
+      - "Full Hysterectomy"
+      - "Gross Total Resection"
+      - "Hand Assisted Laparoscopic Radical Nephrectomy"
+      - "Hysterectomy NOS"
+      - "Incisional Biopsy"
+      - "Indeterminant"
+      - "Laparoscopic Biopsy"
+      - "Laparoscopic Partial Nephrectomy"
+      - "Laparoscopic Radical Nephrectomy"
+      - "Laparoscopic Radical Prostatectomy with Robotics"
+      - "Laparoscopic Radical Prostatectomy without Robotics"
+      - "Left Hemicolectomy"
+      - "Liquid Biopsy"
+      - "Lobectomy"
+      - "Local Resection (Exoresection; wall resection)"
+      - "Lumpectomy"
+      - "Lymphadenectomy"
+      - "Metastasectomy"
+      - "Modified Radical Mastectomy"
+      - "Needle Biopsy"
+      - "Omentectomy"
+      - "Oophorectomy"
+      - "Open Craniotomy"
+      - "Open Partial Nephrectomy"
+      - "Open Radical Nephrectomy"
+      - "Open Radical Prostatectomy"
+      - "Orchiectomy"
+      - "Other"
+      - "Other Surgical Resection"
+      - "Pan-Procto Colectomy"
+      - "Pancreatectomy"
+      - "Paracentesis"
+      - "Partial Hepatectomy"
+      - "Peritoneal Lavage"
+      - "Pneumonectomy"
+      - "Punch Biopsy"
+      - "Radical Hysterectomy"
+      - "Right Hemicolectomy"
+      - "Salpingectomy"
+      - "Salpingo-oophorectomy"
+      - "Sigmoid Colectomy"
+      - "Simple Hysterectomy"
+      - "Simple Mastectomy"
+      - "Subtotal Resection"
+      - "Supracervical Hysterectomy"
+      - "Surgical Resection"
+      - "Thoracentesis"
+      - "Thoracoscopic Biopsy"
+      - "Total Colectomy"
+      - "Total Hepatectomy"
+      - "Total Mastectomy"
+      - "Transplant"
+      - "Transurethral resection (TURBT)"
+      - "Transverse Colectomy"
+      - "Tumor Debulking"
+      - "Tumor Resection"
+      - "Wedge Resection"
+      - "Whipple Procedure"
+      - "Unknown"
+      - "Not Reported"
+      - "Not Allowed To Collect"
+    Req: false
+    Private: false
+#property of sample
+  sample_type_id:
+    Desc: The accompanying sample type id for the sample type.
+    Src: None
+    Type:
+      - "01"
+      - "02"
+      - "03"
+      - "04"
+      - "05"
+      - "06"
+      - "07"
+      - "08"
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "13"
+      - "14"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "20"
+      - "30"
+      - "31"
+      - "32"
+      - "40"
+      - "41"
+      - "42"
+      - "50"
+      - "60"
+      - "61"
+      - "85"
+      - "86"
+      - "99"
+    Req: false
+    Private: false
+#property of sample
+  total_tissue_area:
+    Desc: The total area of a tissue sample.
+    Src: None
+    Type: number
+    Req: false
+    Private: false
+#property of sample
+  passage_count:
+    Desc: Number of passages (splits) between the original tissue and this model.
+    Src: None
+    Type: integer
     Req: false
     Private: false
 #property of sample
@@ -1148,90 +1288,6 @@ PropDefinitions:
       - "OCT"
       - "Snap Frozen"
       - "Frozen"
-      - "Unknown"
-      - "Not Reported"
-      - "Not Allowed To Collect"
-    Req: false
-    Private: false
-#property of sample
-  method_of_sample_procurement:
-    Desc: The method used to procure the sample used to extract analyte(s).
-    Src: None
-    Type:
-      - "Abdomino-perineal Resection of Rectum"
-      - "Anterior Resection of Rectum"
-      - "Ascites Drainage"
-      - "Aspirate"
-      - "Autopsy"
-      - "Biopsy"
-      - "Blood Draw"
-      - "Bone Marrow Aspirate"
-      - "Core Biopsy"
-      - "Cystectomy"
-      - "Endo Rectal Tumor Resection"
-      - "Endoscopic Biopsy"
-      - "Endoscopic Mucosal Resection (EMR)"
-      - "Enucleation"
-      - "Excisional Biopsy"
-      - "Fine Needle Aspiration"
-      - "Full Hysterectomy"
-      - "Gross Total Resection"
-      - "Hand Assisted Laparoscopic Radical Nephrectomy"
-      - "Hysterectomy NOS"
-      - "Incisional Biopsy"
-      - "Indeterminant"
-      - "Laparoscopic Biopsy"
-      - "Laparoscopic Partial Nephrectomy"
-      - "Laparoscopic Radical Nephrectomy"
-      - "Laparoscopic Radical Prostatectomy with Robotics"
-      - "Laparoscopic Radical Prostatectomy without Robotics"
-      - "Left Hemicolectomy"
-      - "Liquid Biopsy"
-      - "Lobectomy"
-      - "Local Resection (Exoresection; wall resection)"
-      - "Lumpectomy"
-      - "Lymphadenectomy"
-      - "Metastasectomy"
-      - "Modified Radical Mastectomy"
-      - "Needle Biopsy"
-      - "Omentectomy"
-      - "Oophorectomy"
-      - "Open Craniotomy"
-      - "Open Partial Nephrectomy"
-      - "Open Radical Nephrectomy"
-      - "Open Radical Prostatectomy"
-      - "Orchiectomy"
-      - "Other"
-      - "Other Surgical Resection"
-      - "Pan-Procto Colectomy"
-      - "Pancreatectomy"
-      - "Paracentesis"
-      - "Partial Hepatectomy"
-      - "Peritoneal Lavage"
-      - "Pneumonectomy"
-      - "Punch Biopsy"
-      - "Radical Hysterectomy"
-      - "Right Hemicolectomy"
-      - "Salpingectomy"
-      - "Salpingo-oophorectomy"
-      - "Sigmoid Colectomy"
-      - "Simple Hysterectomy"
-      - "Simple Mastectomy"
-      - "Subtotal Resection"
-      - "Supracervical Hysterectomy"
-      - "Surgical Resection"
-      - "Thoracentesis"
-      - "Thoracoscopic Biopsy"
-      - "Total Colectomy"
-      - "Total Hepatectomy"
-      - "Total Mastectomy"
-      - "Transplant"
-      - "Transurethral resection (TURBT)"
-      - "Transverse Colectomy"
-      - "Tumor Debulking"
-      - "Tumor Resection"
-      - "Wedge Resection"
-      - "Whipple Procedure"
       - "Unknown"
       - "Not Reported"
       - "Not Allowed To Collect"
@@ -1702,43 +1758,50 @@ PropDefinitions:
     Req: true
     Private: false
 #property of laboratory_procedure
+  test_name:
+    Desc: The name of the test, if applicable. Example- OncotypeDX, Oncomine Comprehensive Cancer Panel.
+    Src: None
+    Type: string
+    Req: false
+    Private: false
+#property of laboratory_procedure
   instrument_name:
-    Desc: The name of the instrument used for the laboratory procedure. Example- Next Generation Sequencer, Flow Cytometer, Mass Spectrophotometer
+    Desc: The name of the instrument used for the laboratory procedure, if applicable. Example- Next Generation Sequencer, Flow Cytometer, Mass Spectrophotometer
     Src: None
     Type: string
     Req: false
     Private: false
 #property of laboratory_procedure
   instrument_model:
-    Desc: The make of the instrument used for the laboratory procedure. Example- Illumina.
+    Desc: The make of the instrument used for the laboratory procedure, if applicable. Example- Illumina.
     Src: None
     Type: string
     Req: false
     Private: false
 #property of laboratory_procedure
   instrument_version:
-    Desc: The instrument version used for the laboratory procedure.
+    Desc: The instrument version used for the laboratory procedure, if applicable.
     Src: None
     Type: string
     Req: false
     Private: false
 #property of laboratory_procedure
   software_name:
-    Desc: The name of any software application used in the laboratory procedure. Example- NextSeq Control Software version 4.0
+    Desc: The name of any software application used in the laboratory procedure, if applicable. Example- NextSeq Control Software version 4.0
     Src: None
     Type: string
     Req: false
     Private: false
 #property of laboratory_procedure
   software_version:
-    Desc: The specific version of the software used in the laboratory procedure.
+    Desc: The specific version of the software used in the laboratory procedure, if applicable.
     Src: None
     Type: string
     Req: false
     Private: false
 #property of laboratory_procedure
   reagent_description:
-    Desc: Name of a key reagent used in laboratory procedure. Example- MiSeq Reagent Kit V2.
+    Desc: Name of a key reagent used in laboratory procedure, if applicable. Example- MiSeq Reagent Kit V2.
     Src: None
     Type: string
     Req: false
@@ -1880,6 +1943,97 @@ PropDefinitions:
     Desc: The study subject's age (in years) on the reference or anchor date date used during date obfuscation.
     Src: None
     Type: integer
+    Req: false
+    Private: false
+#property of demographic_data, diagnosis
+  cause_of_death:
+    Desc: Text term to identify the cause of death for a patient.
+    Src: None
+    Type: string
+    Req: false
+    Private: false
+#property of demographic_data
+  survival_time:
+    Desc: Days from registration to death or date last known alive.
+    Src: None
+    Type:
+      units:
+       - day
+      value_type: integer
+    Req: false
+    Private: false
+#property of demographic_data, diagnosis
+  days_to_death:
+    Desc: Time interval from a person's date of death to the date of initial pathologic diagnosis, represented as a calculated number of days.
+    Src: None
+    Type:
+      units:
+       - day
+      value_type: string
+    Req: false
+    Private: false
+#property of demographic_data
+  ethnicity:
+    Desc: An individual's self-described social and cultural grouping, specifically whether an individual describes themselves as Hispanic or Latino. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.
+    Src: None
+    Type:
+      - "Hispanic or Latino"
+      - "Not Hispanic or Latino"
+      - "Unknown"
+      - "Not Reported"
+      - "Not Allowed to Collect"
+    Req: false
+    Private: false
+#property of demographic_data
+  race:
+    Desc: An arbitrary classification of a taxonomic group that is a division of a species. It usually arises as a consequence of geographical isolation within a species and is characterized by shared heredity, physical attributes and behavior, and in the case of humans, by common history, nationality, or geographic distribution. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.
+    Src: None
+    Type:
+      - "White"
+      - "American Indian or Alaska Native"
+      - "Black or African American"
+      - "Asian"
+      - "Native Hawaiian or Other Pacific Islander"
+      - "Other"
+      - "Unknown"
+      - "Not Reported"
+      - "Not Allowed to Collect"
+      - "Multirace"
+    Req: false
+    Private: false
+#property of demographic_data
+  vital_status:
+    Desc: The survival state of the person registered on the protocol.
+    Src: None
+    Type:
+      - "Alive"
+      - "Dead"
+      - "Unknown"
+      - "Not Reported"
+    Req: false
+    Private: false
+#property of demographic_data, follow_up
+  menopause_status:
+    Desc: Text term used to describe the patient's menopause status.
+    Src: None
+    Type:
+      - "Premenopausal"
+      - "Perimenopausal"
+      - "Postmenopausal"
+      - "Unknown"
+      - "Not Reported"
+    Req: false
+    Private: false
+#property of demographic_data
+  gender:
+    Desc: Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1- Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]
+    Src: None
+    Type:
+      - "Female"
+      - "Male"
+      - "Unknown"
+      - "Unspecified"
+      - "Not Reported"
     Req: false
     Private: false
 #property of demographic_data
@@ -2052,13 +2206,6 @@ PropDefinitions:
       - "Yorkshire Terrier"
     Req: false
     Private: false
-#property of demographic_data, diagnosis
-  cause_of_death:
-    Desc: Text term to identify the cause of death for a patient.
-    Src: None
-    Type: string
-    Req: false
-    Private: false
 #property of demographic_data
   cause_of_death_source:
     Desc: The text term used to describe the source used to determine the study subject's cause of death.
@@ -2086,37 +2233,6 @@ PropDefinitions:
     Type: string
     Req: false
     Private: false
-#property of demographic_data, diagnosis
-  days_to_death:
-    Desc: Time interval from a person's date of death to the date of initial pathologic diagnosis, represented as a calculated number of days.
-    Src: None
-    Type: string
-    Req: false
-    Private: false
-#property of demographic_data
-  ethnicity:
-    Desc: An individual's self-described social and cultural grouping, specifically whether an individual describes themselves as Hispanic or Latino. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.
-    Src: None
-    Type:
-      - "hispanic or latino"
-      - "not hispanic or latino"
-      - "Unknown"
-      - "not reported"
-      - "not allowed to collect"
-    Req: false
-    Private: false
-#property of demographic_data
-  gender:
-    Desc: Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1- Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]
-    Src: None
-    Type:
-      - "female"
-      - "male"
-      - "unknown"
-      - "unspecified"
-      - "not reported"
-    Req: false
-    Private: false
 #property of demographic_data
   neutered_indicator:
     Desc: Boolean indicator as to whther the study subject has been either spayed (female study subjects)or neutered (male study subjects)
@@ -2138,33 +2254,6 @@ PropDefinitions:
     Type:
       - "Yes"
       - "No"
-      - "Unknown"
-      - "Not Reported"
-    Req: false
-    Private: false
-#property of demographic_data
-  race:
-    Desc: An arbitrary classification of a taxonomic group that is a division of a species. It usually arises as a consequence of geographical isolation within a species and is characterized by shared heredity, physical attributes and behavior, and in the case of humans, by common history, nationality, or geographic distribution. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.
-    Src: None
-    Type:
-      - "white"
-      - "american indian or alaska native"
-      - "black or african american"
-      - "asian"
-      - "native hawaiian or other pacific islander"
-      - "other"
-      - "Unknown"
-      - "not reported"
-      - "not allowed to collect"
-    Req: false
-    Private: false
-#property of demographic_data
-  vital_status:
-    Desc: The survival state of the person registered on the protocol.
-    Src: None
-    Type:
-      - "Alive"
-      - "Dead"
       - "Unknown"
       - "Not Reported"
     Req: false
@@ -2699,6 +2788,80 @@ PropDefinitions:
     Req: false
     Private: false
 #property of therapeutic_procedure
+  chemotherapy_regimen:
+    Desc: Chemotherapy regimen given (more granular classification than previous variable)
+    Src: None
+    Type:
+      - "Oral CMF (4 week cycles)"
+      - "IV CMF (3 week cycles)"
+      - "Standard AC (3 week cycles)"
+      - "Dose dense AC (2 week cycles)"
+      - "standard AC followed by a taxane"
+      - "Dose dense AC followed by a taxane"
+      - "FEC (3 week cycles)"
+      - "TAC (3 week cycles)"
+      - "TC (3 week cycles – includes any taxane with cyclophosphamide)"
+      - "Other treatment given as part of a CTSU protocol"
+      - "Other"
+      - "None"
+      - "Other anthracycline with no taxane"
+      - "Taxane only"
+      - "Other anthracycline with a taxane"
+    Req: false
+    Private: false
+#property of therapeutic_procedure
+  chemotherapy_regimen_group:
+    Desc: Chemotherapy regimen given (grouped as reported in manuscript)
+    Src: None
+    Type:
+      - "CMF"
+      - "Anthracycline w/o Taxane"
+      - "Anthracycline and Taxane"
+      - "TC and variations"
+      - "Other or Not Specified"
+      - "None"
+    Req: false
+    Private: false
+#property of therapeutic_procedure
+  all_endocrine_therapy_stopped:
+    Desc: Indicator of whether all endocrine therapy had been stopped (used as event
+indicator for duration analysis)
+    Src: None
+    Type: boolean
+    Req: false
+    Private: false
+#property of therapeutic_procedure
+  primary_surgical_procedure:
+    Desc: Primary surgical procedure
+    Src: None
+    Type:
+      - "Mastectomy"
+      - "Tumorectomy"
+    Req: false
+    Private: false
+#property of therapeutic_procedure
+  received_chemotherapy:
+    Desc: Indicator of whether patients were treated with
+chemotherapy (cases with no follow-up data are coded as 0)
+    Src: None
+    Type: boolean
+    Req: false
+    Private: false
+#property of therapeutic_procedure
+  endocrine_therapy_type:
+    Desc: Type of endocrine therapy
+    Src: None
+    Type:
+      - "AI"
+      - "OFS"
+      - "OFS & AI"
+      - "Tam"
+      - "Tam & AI"
+      - "Other"
+      - "None"
+    Req: false
+    Private: false
+#property of therapeutic_procedure
   initial_disease_status:
     Desc: The text term used to describe the status of the patient's malignancy when the treatment began.
     Src: None
@@ -3165,6 +3328,82 @@ PropDefinitions:
     Src: None
     Type: string
     Req: true
+    Private: false
+#property of diagnosis
+  tumor_grade:
+    Desc: Numeric value to express the degree of abnormality of cancer cells, a measure of differentiation and aggressiveness.
+    Src: None
+    Type:
+      - "G1"
+      - "G2"
+      - "G3"
+      - "G4"
+      - "GX"
+      - "GB"
+      - "High Grade"
+      - "Intermediate Grade"
+      - "Low Grade"
+      - "Unknown"
+      - "Not Reported"
+    Req: false
+    Private: false
+#property of diagnosis
+  tumor_largest_dimension_diameter:
+    Desc: Numeric value used to describe the maximum diameter or dimension of the primary tumor.
+    Src: None
+    Type:
+      units:
+       - millimeter
+      value_type: number
+    Req: false
+    Private: false
+#property of diagnosis
+  er_status:
+    Desc: Estrogen Receptor Status
+    Src: None
+    Type:
+      - "Negative"
+      - "Positive"
+    Req: false
+    Private: false
+#property of diagnosis
+  nuclear_grade:
+    Desc: Nuclear grade (as reported by local site).
+    Src: None
+    Type:
+      - "Low"
+      - "Medium"
+      - "High"
+      - "Not Reported"
+    Req: false
+    Private: false
+#property of diagnosis
+  pr_status:
+    Desc: Progesterone Receptor Status
+    Src: None
+    Type:
+      - "Negative"
+      - "Positive"
+    Req: false
+    Private: false
+#property of diagnosis
+  recurrence_score:
+    Desc: The recurrence score reported by OncotypeDX assay.
+    Src: None
+    Type: integer
+    Req: false
+    Private: false
+#property of diagnosis
+  tumor_size_group:
+    Desc: Tumor size category
+    Src: None
+    Type:
+      - "<=1"
+      - "(1,2]"
+      - "(2,3]"
+      - "(3,4]"
+      - ">4"
+    Req: false
     Private: false
 #property of diagnosis
   age_at_diagnosis:
@@ -7510,34 +7749,6 @@ PropDefinitions:
     Req: false
     Private: false
 #property of diagnosis
-  tumor_grade:
-    Desc: Numeric value to express the degree of abnormality of cancer cells, a measure of differentiation and aggressiveness.
-    Src: None
-    Type:
-      - "G1"
-      - "G2"
-      - "G3"
-      - "G4"
-      - "GX"
-      - "GB"
-      - "High Grade"
-      - "Intermediate Grade"
-      - "Low Grade"
-      - "Unknown"
-      - "Not Reported"
-    Req: false
-    Private: false
-#property of diagnosis
-  tumor_largest_dimension_diameter:
-    Desc: Numeric value used to describe the maximum diameter or dimension of the primary tumor.
-    Src: None
-    Type:
-      units:
-       - centimeters
-      value_type: number
-    Req: false
-    Private: false
-#property of diagnosis
   tumor_regression_grade:
     Desc: A numeric value used to measure therapeutic response of the primary tumor and predict patient outcomes based on a three-point tumor regression grading system.
     Src: None
@@ -7624,6 +7835,72 @@ PropDefinitions:
     Src: None
     Type: string
     Req: true
+    Private: false
+#property of follow_up
+  days_to_progression:
+    Desc: Number of days between the date used for index and the date the patient's disease progressed.
+    Src: None
+    Type: integer
+    Req: false
+    Private: false
+#property of follow_up
+  dfs_event_indicator:
+    Desc: Disease Free Survival event indicator
+    Src: None
+    Type:
+      - "DFS event reported (dfs is time of first DFS event)"
+      - "No DFS event"
+    Req: false
+    Private: false
+#property of follow_up
+  days_to_distant_recurrence:
+    Desc: Distant recurrence-free interval- Days from registration to first distant
+recurrence or last disease evaluation
+    Src: None
+    Type: integer
+    Req: false
+    Private: false
+#property of follow_up
+  distant_recurrence_indicator:
+    Desc: Distant recurrence indicator
+    Src: None
+    Type:
+      - "Distant recurrence (drfi is time of distant recurrence)"
+      - "No distant recurrence"
+    Req: false
+    Private: false
+#property of follow_up
+  recurrence_free_indicator:
+    Desc: Recurrence indicator
+    Src: None
+    Type:
+      - "Recurrence (rfi is time of recurrence)"
+      - "No recurrence"
+    Req: false
+    Private: false
+#property of follow_up
+  dfs_event_type:
+    Desc: Type of first DFS event
+    Src: None
+    Type:
+      - "Ipsilateral breast recurrence"
+      - "Recurrence at local-regional site"
+      - "Recurrence at distant site (includes concurrent distant and local-regional)"
+      - "New cancer of the opposite breast"
+      - "New primary cancer at other than breast or non-melanoma skin cancer"
+      - "Death without another event reported"
+      - "No recurrence"
+    Req: false
+    Private: false
+#property of follow_up
+  first_recurrence_type:
+    Desc: Type of first recurrence
+    Src: None
+    Type:
+      - "Ipsilateral breast recurrence"
+      - "Recurrence at local-regional site"
+      - "Recurrence at distant site (includes concurrent distant and local-regional)No recurrence"
+    Req: false
     Private: false
 #property of follow_up
   adverse_event:
@@ -8638,13 +8915,6 @@ PropDefinitions:
     Req: false
     Private: false
 #property of follow_up
-  days_to_progression:
-    Desc: Number of days between the date used for index and the date the patient's disease progressed.
-    Src: None
-    Type: integer
-    Req: false
-    Private: false
-#property of follow_up
   days_to_progression_free:
     Desc: Number of days between the date used for index and the date the patient's disease was formally confirmed as progression-free.
     Src: None
@@ -8800,18 +9070,6 @@ PropDefinitions:
       - "80"
       - "90"
       - "100"
-      - "Unknown"
-      - "Not Reported"
-    Req: false
-    Private: false
-#property of follow_up
-  menopause_status:
-    Desc: Text term used to describe the patient's menopause status.
-    Src: None
-    Type:
-      - "Premenopausal"
-      - "Perimenopausal"
-      - "Postmenopausal"
       - "Unknown"
       - "Not Reported"
     Req: false
@@ -9345,6 +9603,80 @@ PropDefinitions:
       - "Hepatitis C Virus RNA"
       - "Unknown"
       - "Not Reported"
+    Req: false
+    Private: false
+#property of stratification_factor
+  stratification_factor_id:
+    Desc: A unique id assigned by the data commons to the stratification_factor node.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+#property of stratification_factor
+  grouped_recurrence_score:
+    Desc: Grouped RS (derived from RS) Used as a stratification factor for randomizations during the later portion of the study, and included as a stratification factor for all randomized cases for stratified analyses in the paper
+    Src: None
+    Type:
+      - "0-5"
+      - "6-10"
+      - "11-15"
+      - "16-20"
+      - "21-25"
+      - "26-30"
+      - "31-35"
+      - "36-40"
+      - "41-50"
+      - "51-100"
+    Req: false
+    Private: false
+#property of stratification_factor
+  stratification_code:
+    Desc: Combined stratification variable used for stratified comparison of randomized
+arms
+    Src: None
+    Type: integer
+    Req: false
+    Private: false
+    minimum: 1
+    maximum: 120
+#property of stratification_factor
+  menopausal_status_stratification:
+    Desc: Menopausal Status Stratification (reported during registration)
+    Src: None
+    Type:
+      - "Postmenopausal"
+      - "Pre/Peri Menopausal"
+    Req: false
+    Private: false
+#property of stratification_factor
+  planned_chemotherapy_stratification:
+    Desc: Type of Planned Chemo Stratification (reported during
+registration)
+    Src: None
+    Type:
+      - "Taxane containing regimen"
+      - "Non-Taxane regimen"
+      - "Not Applicable"
+    Req: false
+    Private: false
+#property of stratification_factor
+  planned_radiotherapy_stratification:
+    Desc: Type of Planned RT (reported during registration)
+    Src: None
+    Type:
+      - "Whole breast, no boost"
+      - "Whole breast with boost"
+      - "Partial breast"
+      - "None Planned"
+    Req: false
+    Private: false
+#property of stratification_factor
+  tumor_size_stratification:
+    Desc: Tumor Size Stratification (reported during registration)
+    Src: None
+    Type:
+      - "<= 2.0 cm"
+      - "> 2.0 cm"
     Req: false
     Private: false
 #property of cross_referenced_at
