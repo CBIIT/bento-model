@@ -558,6 +558,8 @@ Relationships:
         Dst: study_subject
       - Src: diagnosis
         Dst: study_subject
+      - Src: stratification_factor
+        Dst: study_subject
       - Src: follow_up
         Dst: study_subject
     Props: null

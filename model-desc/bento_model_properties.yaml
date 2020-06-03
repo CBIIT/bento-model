@@ -561,14 +561,16 @@ PropDefinitions:
     Private: false
 #property of study_subject
   in_analysis:
-    Desc: Indicator variable of whether the patient was in the primary analysis set for the publication
+    Desc: Indicator variable of whether the patient was in the primary
+analysis set for the publication
     Src: None
     Type: boolean
     Req: false
     Private: false
 #property of study_subject
   case_report_form_submitted:
-    Desc: Indicator variable of whether the TAILORx On-Study case report form (baseline data) was submitted
+    Desc: Indicator variable of whether the TAILORx On-Study case report form (baseline data) was
+submitted
     Src: None
     Type: boolean
     Req: false
@@ -2798,7 +2800,7 @@ PropDefinitions:
       - "Dose dense AC followed by a taxane"
       - "FEC (3 week cycles)"
       - "TAC (3 week cycles)"
-      - "TC (3 week cycles, includes any taxane with cyclophosphamide)"
+      - "TC (3 week cycles – includes any taxane with cyclophosphamide)"
       - "Other treatment given as part of a CTSU protocol"
       - "Other"
       - "None"
@@ -2822,7 +2824,8 @@ PropDefinitions:
     Private: false
 #property of therapeutic_procedure
   all_endocrine_therapy_stopped:
-    Desc: Indicator of whether all endocrine therapy had been stopped (used as event indicator for duration analysis)
+    Desc: Indicator of whether all endocrine therapy had been stopped (used as event
+indicator for duration analysis)
     Src: None
     Type: boolean
     Req: false
@@ -2838,7 +2841,8 @@ PropDefinitions:
     Private: false
 #property of therapeutic_procedure
   received_chemotherapy:
-    Desc: Indicator of whether patients were treated with chemotherapy (cases with no follow-up data are coded as 0)
+    Desc: Indicator of whether patients were treated with
+chemotherapy (cases with no follow-up data are coded as 0)
     Src: None
     Type: boolean
     Req: false
@@ -7850,7 +7854,8 @@ PropDefinitions:
     Private: false
 #property of follow_up
   days_to_distant_recurrence:
-    Desc: Distant recurrence-free interval- Days from registration to first distant recurrence or last disease evaluation
+    Desc: Distant recurrence-free interval- Days from registration to first distant
+recurrence or last disease evaluation
     Src: None
     Type: integer
     Req: false
@@ -9627,7 +9632,8 @@ PropDefinitions:
     Private: false
 #property of stratification_factor
   stratification_code:
-    Desc: Combined stratification variable used for stratified comparison of randomized arms
+    Desc: Combined stratification variable used for stratified comparison of randomized
+arms
     Src: None
     Type: integer
     Req: false
@@ -9645,7 +9651,8 @@ PropDefinitions:
     Private: false
 #property of stratification_factor
   planned_chemotherapy_stratification:
-    Desc: Type of Planned Chemo Stratification (reported during registration)
+    Desc: Type of Planned Chemo Stratification (reported during
+registration)
     Src: None
     Type:
       - "Taxane containing regimen"
