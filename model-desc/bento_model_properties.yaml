@@ -7899,7 +7899,8 @@ recurrence or last disease evaluation
     Type:
       - "Ipsilateral breast recurrence"
       - "Recurrence at local-regional site"
-      - "Recurrence at distant site (includes concurrent distant and local-regional)No recurrence"
+      - "Recurrence at distant site (includes concurrent distant and local-regional)"
+      - "No recurrence"
     Req: false
     Private: false
 #property of follow_up
