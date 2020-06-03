@@ -2798,7 +2798,7 @@ PropDefinitions:
       - "Dose dense AC followed by a taxane"
       - "FEC (3 week cycles)"
       - "TAC (3 week cycles)"
-      - "TC (3 week cycles – includes any taxane with cyclophosphamide)"
+      - "TC (3 week cycles, includes any taxane with cyclophosphamide)"
       - "Other treatment given as part of a CTSU protocol"
       - "Other"
       - "None"
