@@ -1,3 +1,6 @@
 [submodule "model-desc/bento-mdf"]
 	path = model-desc/bento-mdf
 	url = https://github.com/CBIIT/bento-mdf
+[submodule "bento-mdf"]
+	path = bento-mdf
+	url = https://github.com/CBIIT/bento-mdf
