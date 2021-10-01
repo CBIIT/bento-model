@@ -6,7 +6,6 @@
 
 # Bento General Data Model
 
-
 Zoom to Node: <select id="node_select">
   <option value="">Zoom to Node</option>
 </select>
