@@ -1,5 +1,5 @@
-repo https://github.com/CBIIT/bento-model.git
-commit 25d683f
+repo https://github.com/CBIIT/bento-model
+commit 594f745
 node	property	value_or_TYPE
 aliquot	aliquot_concentration	NUMBER (milligram per milliliter)
 aliquot	aliquot_id	STRING
@@ -6961,38 +6961,38 @@ cross_referenced_at	study_subject	cross_reference_database	cross_reference_url	S
 of_aliquot	report	aliquot	NA	NA
 of_analyte	report	analyte	NA	NA
 of_analyte	aliquot	analyte	NA	NA
-of_diagnosis	file	diagnosis	NA	NA
 of_diagnosis	therapeutic_procedure	diagnosis	NA	NA
+of_diagnosis	file	diagnosis	NA	NA
 of_diagnosis	follow_up	diagnosis	NA	NA
-of_fraction	report	fraction	NA	NA
 of_fraction	analyte	fraction	NA	NA
+of_fraction	report	fraction	NA	NA
 of_institution	program	institution	NA	NA
-of_laboratory_procedure	file	laboratory_procedure	NA	NA
 of_laboratory_procedure	report	laboratory_procedure	NA	NA
-of_program	project	program	NA	NA
+of_laboratory_procedure	file	laboratory_procedure	NA	NA
 of_program	laboratory_procedure	program	NA	NA
 of_program	study_subject	program	NA	NA
-of_program	file	program	NA	NA
+of_program	project	program	NA	NA
 of_program	study	program	NA	NA
+of_program	file	program	NA	NA
 of_project	study_subject	project	NA	NA
 of_project	file	project	NA	NA
 of_sample	report	sample	NA	NA
-of_sample	fraction	sample	NA	NA
 of_sample	analyte	sample	NA	NA
 of_sample	file	sample	NA	NA
-of_study	study_subject	study	NA	NA
+of_sample	fraction	sample	NA	NA
 of_study	file	study	NA	NA
-of_study_subject	follow_up	study_subject	NA	NA
+of_study	study_subject	study	NA	NA
 of_study_subject	sample	study_subject	NA	NA
-of_study_subject	diagnosis	study_subject	NA	NA
 of_study_subject	exposure	study_subject	NA	NA
 of_study_subject	demographic_data	study_subject	NA	NA
 of_study_subject	family_medical_history	study_subject	NA	NA
+of_study_subject	follow_up	study_subject	NA	NA
 of_study_subject	file	study_subject	NA	NA
+of_study_subject	diagnosis	study_subject	NA	NA
 processed_by	sample	laboratory_procedure	NA	NA
+processed_by	analyte	laboratory_procedure	NA	NA
 processed_by	fraction	laboratory_procedure	NA	NA
 processed_by	aliquot	laboratory_procedure	NA	NA
-processed_by	analyte	laboratory_procedure	NA	NA
 
 property	description
 a260_a280_ratio	Numeric value that represents the sample ratio of nucleic acid absorbance at 260 nm and 280 nm, used to determine a measure of DNA purity.
