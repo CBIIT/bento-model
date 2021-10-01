@@ -3,3 +3,5 @@
 # Bento General Data Model
 
 See also [bento-tailorx](https://github.com/CBIIT/BENTO-TAILORx-model/).
+
+[View on Github Pages](https://cbiit.github.io/bento-model/)
